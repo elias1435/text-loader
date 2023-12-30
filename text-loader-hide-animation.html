@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide Element with only CSS</title>
+
+<style>
+#loader {
+display: block;
+animation: hideAnimation 0.5s forwards; 
+animation-delay: 7s;
+}
+
+@keyframes hideAnimation {
+to {
+opacity: 0;
+display: none;
+}
+}
+
+
+.text-container {
+position: relative;
+}
+
+.text-block {
+position: absolute;
+opacity: 0;
+animation: fadeInText 1s forwards;
+}
+
+@keyframes fadeInText {
+0% {
+opacity: 0;
+}
+25% {
+opacity: 1;
+}
+75% {
+opacity: 1;
+}
+100% {
+opacity: 0;
+}
+}
+
+/* Adjust the delay for each text block */
+.text-block:nth-child(1) {
+animation-delay: 0s;
+}
+
+.text-block:nth-child(2) {
+animation-delay: 2s;
+}
+
+.text-block:nth-child(3) {
+animation-delay: 4s;
+}
+      
+</style>
+
+</head>
+<body>
+  
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loading-spinner">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="text-container">
+      <div class="text-block">“Reviewing your answers”</div>
+      <div class="text-block">“Searching for spots available”</div>
+      <div class="text-block">“Eligibility confirmation”</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
